@@ -1,0 +1,68 @@
+[19.44, 22/10/2022] X5G FADHILAYUL HUSAINI: public class Rekening {
+    
+    double saldo;
+    Anggota a;
+
+    public void showSaldo() {
+        a.showAnggota();
+        System.out.println(" | Total Saldo: "+saldo);
+    }
+
+    public void ambilSaldo(Anggota a, double ambil) {
+        this.a = a;
+        if(ambil>this.saldo){
+            ambil=0;
+        }else{
+            this.saldo = saldo - ambil;
+        }        
+    }
+    
+    public void tambahSaldo(Anggota a, double tambah) {
+        this.a = a;
+        this.saldo = saldo + tambah;
+    }
+    
+    
+    
+    
+}
+[19.44, 22/10/2022] X1G Septian Adi Pratomo: public class Koperasi {
+    
+    // inscne variabel milik objek itu sendiri, walaupun objek lain diganti, yang ini tetap ga berubah
+    String idAnggota;
+    String namaAnggota;
+    
+    // disharing di semua instance / objek 
+    static int jumlahAnggota = 0; 
+    
+    public Koperasi(String idAnggota, String namaAnggota){
+        this.idAnggota = idAnggota;
+        this.namaAnggota = namaAnggota;  
+        jumlahAnggota();      
+    }    
+    
+    public void jumlahAnggota(){
+        jumlahAnggota += 1;
+    }
+    
+    public void showKoperasi(){
+        System.out.print(idAnggota+" | "+namaAnggota);        
+    }
+
+}
+[19.44, 22/10/2022] X1G Septian Adi Pratomo: public class Anggota{  
+    
+    Koperasi kop;
+    String nomorRekening;   
+    
+    public Anggota(Koperasi kop, String nomorRek){
+        this.kop = kop;
+        this.nomorRekening = nomorRek;        
+    }    
+    
+    public void showAnggota(){
+        kop.showKoperasi();
+        System.out.print(" | "+nomorRekening);
+    }
+    
+    
